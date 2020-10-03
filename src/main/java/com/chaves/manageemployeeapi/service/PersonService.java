@@ -1,7 +1,7 @@
 package com.chaves.manageemployeeapi.service;
+import com.chaves.manageemployeeapi.dto.PersonDTO;
 
-import com.chaves.manageemployeeapi.model.entity.Person;
 
 public interface PersonService {
-    Person create();
+    PersonDTO create(PersonDTO dto);
 }

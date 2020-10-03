@@ -1,9 +1,10 @@
 package com.chaves.manageemployeeapi.service;
 
-import com.chaves.manageemployeeapi.model.entity.Employee;
+import com.chaves.manageemployeeapi.dto.EmployeeDTO;
+import com.chaves.manageemployeeapi.dto.PersonDTO;
 
 import java.util.List;
 
 public interface EmployeeService {
-    List<Employee> findAll();
+    List<EmployeeDTO> findAll();
 }

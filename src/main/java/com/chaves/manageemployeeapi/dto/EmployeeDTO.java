@@ -1,29 +1,16 @@
-package com.chaves.manageemployeeapi.model.entity;
+package com.chaves.manageemployeeapi.dto;
 
-import javax.persistence.*;
 import java.math.BigDecimal;
 
-@Entity
-public class Employee {
+public class EmployeeDTO {
 
-    @Id
     private Integer id;
-
-    @JoinColumn( name = "PERSON_ID")
-    @OneToOne( cascade = CascadeType.ALL )
-    @MapsId
-    private Person person;
-
-    @Column( name = "PASSWORD")
     private String password;
-
-    @Column( name = "ACTIVE")
     private Boolean active;
-
-    @Column( name = "SALARY")
     private BigDecimal salary;
+    private PersonDTO person;
 
-    public Employee(){}
+    public EmployeeDTO(){}
 
     public Integer getId() {
         return id;
@@ -57,11 +44,11 @@ public class Employee {
         this.salary = salary;
     }
 
-    public Person getPerson() {
+    public PersonDTO getPerson() {
         return person;
     }
 
-    public void setPerson(Person person) {
-        this.person = person;
+    public void setPersonDTO(PersonDTO personDTO) {
+        this.person = personDTO;
     }
 }
