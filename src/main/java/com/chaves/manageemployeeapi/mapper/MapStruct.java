@@ -11,4 +11,5 @@ public interface MapStruct {
     PersonDTO personToDTO (Person p);
     Person personToEntity (PersonDTO dto);
     EmployeeDTO employeeToDTO (Employee e);
+    Employee employeeToEntity(EmployeeDTO dto);
 }

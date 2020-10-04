@@ -1,5 +1,7 @@
 package com.chaves.manageemployeeapi.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 

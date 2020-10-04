@@ -1,5 +1,7 @@
 package com.chaves.manageemployeeapi.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -25,6 +27,10 @@ public class Person {
 
     @Column( name = "EMAIL")
     private String email;
+
+    @JsonIgnoreProperties(value = "person")
+    @OneToOne(mappedBy = "person")
+    private Employee employee;
 
     public Person(){}
 
@@ -74,5 +80,13 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 }

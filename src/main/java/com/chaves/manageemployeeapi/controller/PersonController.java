@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping(value = "/clients")
-public class ClientController {
+@RequestMapping(value = "/people")
+public class PersonController {
 
     @Autowired
     private PersonService service;
