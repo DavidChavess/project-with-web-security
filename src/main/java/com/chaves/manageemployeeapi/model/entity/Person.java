@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Person {
@@ -31,6 +33,10 @@ public class Person {
     @JsonIgnoreProperties(value = "person")
     @OneToOne(mappedBy = "person")
     private Employee employee;
+
+    @JsonIgnoreProperties(value = "person")
+    @OneToMany(mappedBy = "person")
+    private Set<Sale> sales = new HashSet<>();
 
     public Person(){}
 
@@ -89,4 +95,9 @@ public class Person {
     public void setEmployee(Employee employee) {
         this.employee = employee;
     }
+
+    public Set<Sale> getSales() {
+        return sales;
+    }
+
 }
